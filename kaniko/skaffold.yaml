@@ -1,0 +1,9 @@
+apiVersion: skaffold/v1beta14
+kind: Config
+build:
+  artifacts:
+  - image: gcr.io/dga-demo/hello
+    kaniko:
+      image: gcr.io/kaniko-project/executor:v0.13.0
+  cluster:
+    pullSecret: ~/secrets/kaniko/dga-demo.json

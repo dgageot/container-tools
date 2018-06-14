@@ -1,0 +1,511 @@
+@font-face {
+    font-family: 'Google Sans';
+    font-style: italic;
+    font-weight: 400;
+    src: local('Google Sans Italic'), local('GoogleSans-Italic'), url(/fonts/4UaErENHsxJlGDuGo1OIlL3L8pxULilENlY.woff2) format('woff2');
+    unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+@font-face {
+    font-family: 'Google Sans';
+    font-style: italic;
+    font-weight: 500;
+    src: local('Google Sans Medium Italic'), local('GoogleSans-MediumItalic'), url(/fonts/4UaZrENHsxJlGDuGo1OIlL3L-m93OwRmO3wq9Io.woff2) format('woff2');
+    unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+@font-face {
+    font-family: 'Google Sans';
+    font-style: italic;
+    font-weight: 700;
+    src: local('Google Sans Bold Italic'), local('GoogleSans-BoldItalic'), url(/fonts/4UaZrENHsxJlGDuGo1OIlL3L-idxOwRmO3wq9Io.woff2) format('woff2');
+    unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+@font-face {
+    font-family: 'Google Sans';
+    font-style: normal;
+    font-weight: 400;
+    src: local('Google Sans Regular'), local('GoogleSans-Regular'), url(/fonts/4UaGrENHsxJlGDuGo1OIlL3Owp5eKQtG.woff2) format('woff2');
+    unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+@font-face {
+    font-family: 'Google Sans';
+    font-style: normal;
+    font-weight: 500;
+    src: local('Google Sans Medium'), local('GoogleSans-Medium'), url(/fonts/4UabrENHsxJlGDuGo1OIlLU94YtzCwZsPF4o.woff2) format('woff2');
+    unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+@font-face {
+    font-family: 'Google Sans';
+    font-style: normal;
+    font-weight: 700;
+    src: local('Google Sans Bold'), local('GoogleSans-Bold'), url(/fonts/4UabrENHsxJlGDuGo1OIlLV154tzCwZsPF4o.woff2) format('woff2');
+    unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+@font-face {
+    font-family: 'Google Sans Display';
+    font-style: italic;
+    font-weight: 400;
+    src: local('Google Sans Display Italic'), local('GoogleSansDisplay-Italic'), url(/fonts/ea8HacM9Wef3EJPWRrHjgE4B6CnlZxHVDvvNozfeY5Z0NQ.woff2) format('woff2');
+    unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+@font-face {
+    font-family: 'Google Sans Display';
+    font-style: italic;
+    font-weight: 500;
+    src: local('Google Sans Display Medium Italic'), local('GoogleSansDisplay-MediumItalic'), url(/fonts/ea8KacM9Wef3EJPWRrHjgE4B6CnlZxHVDvvFUBTLTrR5HwM6cQ.woff2) format('woff2');
+    unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+@font-face {
+    font-family: 'Google Sans Display';
+    font-style: italic;
+    font-weight: 700;
+    src: local('Google Sans Display Bold Italic'), local('GoogleSansDisplay-BoldItalic'), url(/fonts/ea8KacM9Wef3EJPWRrHjgE4B6CnlZxHVDvvFGBLLTrR5HwM6cQ.woff2) format('woff2');
+    unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+@font-face {
+    font-family: 'Google Sans Display';
+    font-style: normal;
+    font-weight: 400;
+    src: local('Google Sans Display Regular'), local('GoogleSansDisplay-Regular'), url(/fonts/ea8FacM9Wef3EJPWRrHjgE4B6CnlZxHVDv79oT3ZQZQ.woff2) format('woff2');
+    unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+@font-face {
+    font-family: 'Google Sans Display';
+    font-style: normal;
+    font-weight: 500;
+    src: local('Google Sans Display Medium'), local('GoogleSansDisplay-Medium'), url(/fonts/ea8IacM9Wef3EJPWRrHjgE4B6CnlZxHVBg3etBD7TL5-PQE.woff2) format('woff2');
+    unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+@font-face {
+    font-family: 'Google Sans Display';
+    font-style: normal;
+    font-weight: 700;
+    src: local('Google Sans Display Bold'), local('GoogleSansDisplay-Bold'), url(/fonts/ea8IacM9Wef3EJPWRrHjgE4B6CnlZxHVBkXYtBD7TL5-PQE.woff2) format('woff2');
+    unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+@font-face {
+    font-family: 'Roboto';
+    font-style: italic;
+    font-weight: 400;
+    src: local('Roboto Italic'), local('Roboto-Italic'), url(/fonts/KFOkCnqEu92Fr1Mu51xIIzIXKMny.woff2) format('woff2');
+    unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+@font-face {
+    font-family: 'Roboto';
+    font-style: italic;
+    font-weight: 500;
+    src: local('Roboto Medium Italic'), local('Roboto-MediumItalic'), url(/fonts/KFOjCnqEu92Fr1Mu51S7ACc6CsTYl4BO.woff2) format('woff2');
+    unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+@font-face {
+    font-family: 'Roboto';
+    font-style: italic;
+    font-weight: 700;
+    src: local('Roboto Bold Italic'), local('Roboto-BoldItalic'), url(/fonts/KFOjCnqEu92Fr1Mu51TzBic6CsTYl4BO.woff2) format('woff2');
+    unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+@font-face {
+    font-family: 'Roboto';
+    font-style: normal;
+    font-weight: 400;
+    src: local('Roboto'), local('Roboto-Regular'), url(/fonts/KFOmCnqEu92Fr1Mu4mxKKTU1Kg.woff2) format('woff2');
+    unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+@font-face {
+    font-family: 'Roboto';
+    font-style: normal;
+    font-weight: 500;
+    src: local('Roboto Medium'), local('Roboto-Medium'), url(/fonts/KFOlCnqEu92Fr1MmEU9fBBc4AMP6lQ.woff2) format('woff2');
+    unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+@font-face {
+    font-family: 'Roboto';
+    font-style: normal;
+    font-weight: 700;
+    src: local('Roboto Bold'), local('Roboto-Bold'), url(/fonts/KFOlCnqEu92Fr1MmWUlfBBc4AMP6lQ.woff2) format('woff2');
+    unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+
+html, body, #top {
+    margin: 0;
+    padding: 0;
+    background-color: black;
+
+    --color-dark: rgb(32,32,35);
+    --color-black: rgb(61, 64, 67);
+    --color-gray: rgb(117,120,123);
+    --color-blue: rgb(66,133,244);
+    --color-red: rgb(219,68,55);
+    --color-yellow: rgb(244,180,0);
+    --color-green: rgb(15,157,88);
+}
+
+html {
+    width: 100%;
+    height: 100%;
+}
+
+body {
+    font-family: 'Roboto', sans-serif;
+    color: var(--color-black);
+    display: flex;
+    align-items: center;
+    height: 100%;
+}
+
+#top {
+    position: relative;
+    background-color: white;
+    width: 100%;
+    height: calc(100vw * 9 / 16);
+    overflow: hidden;
+    flex-grow: 1;
+}
+
+h1, #google-cloud-text {
+    font-family: 'Google Sans Display', Arial, sans-serif;
+}
+
+h2, h3, h4, h5, h6 {
+    font-family: 'Roboto', sans-serif;
+}
+
+h1 {
+    font-size: 4vw;
+    font-weight: 700;
+    margin-bottom: 2vw;
+}
+
+h2 {
+    font-size: 2vw;
+    line-height: 2.2vw;
+    font-weight: 500;
+}
+
+h3 {
+    font-size: 1.6vw;
+    line-height: 0.6vw;
+    font-weight: 700;
+}
+
+h1.space, h2.space, h3.space {
+    margin: 2.5vw 0 0 0;
+    font-weight: 500;
+}
+
+h2 em, h3 em {
+    font-weight: 400;
+}
+
+strong {
+    font-weight: 400;
+    background-color: #e8f0fe;
+    color: var(--color-blue);
+    font-style: normal;
+}
+
+#title-main, #title, #title-low {
+    position: absolute;
+    left: 8.5vw;
+    width: 64vw;
+}
+
+#title {
+    top: 5vw;
+}
+
+#title-low {
+    top: 15vw;
+}
+
+#title-main {
+    top: 19vw;
+}
+
+#long {
+    position: absolute;
+    top: 5vw;
+    left: 8.5vw;
+    width: 64vw;
+}
+
+#related {
+    position: absolute;
+    top: 0;
+    left: 55%;
+    width: 40vw;
+    height: calc(75% - 13vw);
+    padding: 13vw 0 0 3vw;
+    border-left: .15vw solid var(--color-blue); 
+}
+
+#related h2 {
+    font-weight: 400;
+    font-size: 2.1vw;
+}
+
+#related h2 em {
+    color: var(--color-blue);
+    font-style: normal;
+}
+
+#related h1 {
+    color: var(--color-blue);
+    font-weight: normal;
+    font-size: 3.5vw;
+}
+
+#related h3 {
+    font-weight: normal;
+}
+
+#description {
+    position: absolute;
+    top: 10vw;
+    right: 4vw;
+    width: 40%;
+    height: calc(100% - 20vw);
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
+#recap {
+    text-align: center;
+    margin-top: 3vw;
+}
+
+#description h1, #description h2, #description h3,
+#recap h1, #recap h2, #recap h3 {
+    font-weight: 400;
+    margin: 20px;
+}
+
+#description em, #recap em {
+    color: var(--color-blue);
+    font-weight: 500;
+    font-style: normal;
+}
+
+#cloud {
+    position: absolute;
+    top: 14vw;
+    left: 5.5vw;
+    width: 5.4vw;
+}
+
+#pipeline {
+    position: absolute;
+    top: 40%;
+    left: 3.5vw;
+    width: 50%;
+}
+
+#pipeline-cloudbuild {
+    position: absolute;
+    left: 4vw;
+    top: 30%;
+}
+
+#google-cloud {
+    position: absolute;
+    bottom: 3vw;
+    left: 8.5vw;
+    width: 13vw;
+}
+
+#google-cloud-full {
+    position: absolute;
+    bottom: 2.4vw;
+    left: 5vw;
+    width: 21vw;
+}
+
+#google-cloud-full-top {
+    position: absolute;
+    top: 1.5vw;
+    right: 1vw;
+    width: 21vw;
+}
+
+#google-cloud-text {
+    position: absolute;
+    font-size: 2.1vw;
+    bottom: 3.6vw;
+    left: 11vw;
+    color: white;
+    background-color: var(--color-dark);
+}
+
+#animation {
+    position: absolute;
+    top: 0;
+    right: 2vw;
+    width: 50vw;
+}
+
+#number {
+    position: absolute;
+    width: 100%;
+    top: 0;
+    right: -5px;
+}
+
+#speaker {
+    position: absolute;
+    height: calc(100% - 8vw);
+    top: 4vw;
+    right: -2px;
+}
+
+#center {
+    position: absolute;
+    left: 15%;
+    height: 70%;
+}
+
+#back {
+    position: absolute;
+    top: 10%;
+    left: 0;
+    width: 100%;
+    height: 80%;
+    opacity: .2;
+}
+
+#snapshot {
+    position: absolute;
+    width: 50%;
+    height: auto;
+    top: 6vw;
+    left: 2vw;
+}
+
+#progression {
+    position: absolute;
+    height: 6px;
+    bottom: calc((100vh - (100vw * 9 / 16)) / 2);
+    left: 0;
+    background-color: black;
+    border-radius: 0 3px 3px 0;
+    opacity: .4;
+}
+
+h2 a, h3 a {
+    font-weight: 400;
+    color: var(--color-blue);
+}
+
+#dark {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    background-color: var(--color-dark);
+    color: white !important;
+}
+
+#dark~#nav a {
+    visibility: visible;
+    background-color: var(--color-dark);
+}
+
+#fine {
+    width: 95%;
+    margin: 0 auto;
+}
+
+#main {
+    margin: 4vw;
+    padding: 5px;
+    box-shadow: 0 1px 1px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
+}
+
+split-view {
+    height: calc(100% - 11vw);
+    padding: 0 2vw;
+}
+
+h1.demo {
+    margin: 0;
+    padding: 2vw;
+}
+
+#long h2 {
+    font-size: 2.6vw;
+    line-height: 3.2vw;
+    font-weight: normal;
+}
+
+#long em {
+    font-style: normal;
+    color: var(--color-blue);
+}
+
+em a {
+    color: var(--color-blue) !important;
+    border-bottom: 1px dotted;
+}
+
+.social {
+    display: flex;
+    height: 2vw;
+    margin-top: 3vw;
+}
+
+.social+.social {
+    margin-top: 0;
+}
+
+.social img {
+    height: 100%;
+    margin-right: .5vw;
+}
+
+#qr {
+    position: absolute;
+    right: 2vw;
+    bottom: 2.5vw;
+    width: 13vw;
+}
+
+#url {
+    position: absolute;
+    right: 17vw;
+    bottom: 2.5vw;
+    font-size: 2vw;
+    color: var(--color-blue);
+}
+
+a {
+    text-decoration: none;
+}
+
+#bars {
+    position: absolute;
+    right: 0;
+    top: 22vw;
+    width: 64%;
+}
+
+#bars h2 {
+    background-color: var(--color-blue);
+    color: white;
+    padding: 1.8vw 1vw;
+    font-size: 3.2vw;
+    line-height: 3vw;
+    font-weight: 400;
+    font-style: italic;
+    margin: 0 0 1.3vw 0;
+}
+
+#right {
+    position: absolute;
+    top: 0;
+    left: 55%;
+    height: 90%;
+}

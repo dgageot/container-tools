@@ -1,0 +1,11 @@
+namespace: default
+
+commonLabels:
+  env: prod
+
+bases:
+- ../../base
+
+patches:
+- greeting.yaml
+- pull-policy.yaml

@@ -1,0 +1,6 @@
+apiVersion: skaffold/v1beta14
+kind: Config
+build:
+  artifacts:
+  - image: gcr.io/dga-demo/hello-boot
+    jib: {}

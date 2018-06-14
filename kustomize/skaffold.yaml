@@ -1,0 +1,17 @@
+apiVersion: skaffold/v1beta14
+kind: Config
+build:
+  artifacts:
+  - image: gcr.io/dga-demo/hello
+
+deploy:
+  kustomize:
+    path: base
+
+profiles:
+- name: prod
+  activation:
+  - kubeContext: "!docker-for-desktop" 
+  deploy:
+    kustomize:
+      path: overlays/prod

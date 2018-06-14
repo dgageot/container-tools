@@ -1,0 +1,28 @@
+apiVersion: skaffold/v1beta14
+kind: Config
+build:
+  artifacts:
+  - image: gcr.io/dga-demo/proxy
+    context: ./gaming-proxy
+  - image: gcr.io/dga-demo/ref
+    context: ./ref
+  - image: gcr.io/dga-demo/game
+    context: ./game
+  - image: gcr.io/dga-demo/db
+    context: ./db
+  - image: gcr.io/dga-demo/title
+    context: ./title
+    jib: {}
+  - image: gcr.io/dga-demo/ui
+    context: ./ui
+    sync:
+      infer: ["public/*"]
+portForward:
+  - resourceName: ui
+    resourceType: Service
+    port: 8080
+    localPort: 8080
+  - resourceName: ui
+    resourceType: Service
+    port: 35729
+    localPort: 35729

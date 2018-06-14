@@ -1,0 +1,8 @@
+.DS_Store
+bazel/bazel-*
+target
+.settings
+.classpath
+.project
+.vscode
+dive.log

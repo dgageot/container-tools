@@ -1,0 +1,854 @@
+<img id="animation" src="/images/google/animation.gif" />
+<img id="cloud" src="/images/google/cloud.png" />
+<img id="google-cloud" src="/images/google/google-cloud.png" />
+
+<div id="title-main">
+    <h1>Continuous deployment to Kubernetes with the Google Container Tools</h1>
+    <h3>David Gageot <em>- Developer Advocate, Google</em></h3>
+</div>
+
+---
+
+<img id="google-cloud-full" src="/images/google/cloud-full.png" />
+<img id="speaker" src="/images/speakers/david.jpg" />
+
+<div id="title">
+    <h1>About David Gageot</h1>
+    <h2><strong>Developer Advocate<br/>on Google Cloud Platform</strong></h2>
+    <h2><br/>Ex-Docker, worked on Docker Desktop
+    <br/>Developer Experience ftw!<br/>I Love Cats</h2>
+    <h2 class="social">
+        <img src="/images/social/twitter.svg"/>
+        <img src="/images/social/github.svg"/>
+        <img src="/images/social/instagram.svg"/>
+        <a href="https://twitter.com/dgageot">@dgageot</a>
+    </h2>
+</div>
+
+---
+
+<img id="number" src="/images/full/dev.svg" />
+<img id="google-cloud-full" src="/images/google/cloud-full.png" />
+
+---
+
+<div id="dark">
+    <img id="fine" src="/images/fine.png"/>
+</div>
+
+---
+
+<img id="google-cloud-full" src="/images/google/cloud-full.png" />
+<img src="/images/frustration.svg" />
+
+<div id="long">
+    <h1>We asked users:<br/>"Developing for Kubernetes is <em>frustrating".</em></h1>
+</div>
+
+<style>
+    em {
+        color: var(--color-red) !important;
+    }
+
+    #long {
+        width: 100%;
+    }
+</style>
+
+---
+
+<h1 class="demo">Deploy to Kubernetes</h1>
+<img id="google-cloud-full-top" src="/images/google/cloud-full.png" />
+
+<split-view>
+    <web-term path="{{ .WorkingDir }}/repeat"></web-term>
+    <source-code folder="{{ .WorkingDir }}/repeat"
+        files="main.go Dockerfile pod.yaml"
+        start-lines=";5;8"
+        end-lines=";5;8">
+    </source-code>
+</split-view>
+
+---
+
+<img id="google-cloud-full" src="/images/google/cloud-full.png" />
+<img id="snapshot" src="/images/cycle.svg" />
+
+<div id="related">
+    <h1>Infinite loop of<br/>Pain and Suffering</h1>
+    <h2>"Hello, World!" is <strong>complicated!</strong></h2>
+    <h2><strong>Error</strong> prone,</h2>
+    <h2>People solve that with <strong>bash</strong> scripts and <strong>Makefiles</strong>.</h2>
+</div>
+
+<style>
+    #snapshot {
+        width: 65%;
+        top: 15%;
+    }
+</style>
+
+---
+
+<img id="google-cloud-full" src="/images/google/cloud-full.png" />
+<img id="snapshot" src="/images/snapshots/skaffold.png"/>
+
+<div id="related">
+    <h1>Skaffold to the rescue!</h1>
+    <h2>Command line,</h2>
+    <h2><strong>Iterative</strong> development,</h2>
+    <h2><strong>Local</strong> and <strong>Remote</strong> clusters,</h2>
+    <h2><strong>Any</strong> Kubernetes,</h2>
+    <h2><strong>Open Source</strong>.</h2>
+</div>
+
+<img id="qr" src="/qrcode?url=https://skaffold.dev" />
+<a id="url" target="_blank" href="https://skaffold.dev">skaffold.dev</a>
+
+---
+
+<h1 class="demo">Skaffold</h1>
+<img id="google-cloud-full-top" src="/images/google/cloud-full.png" />
+
+<split-view>
+    <web-term path="{{ .WorkingDir }}/hello"></web-term>
+</split-view>
+
+---
+
+<h1 class="demo">But docker builds can be slow</h1>
+<img id="google-cloud-full-top" src="/images/google/cloud-full.png" />
+
+<split-view>
+    <web-term path="{{ .WorkingDir }}/java"></web-term>
+    <source-code folder="{{ .WorkingDir }}/java"
+        files="pom.xml Dockerfile src/main/java/hello/Hello.java"
+        start-lines=""
+        end-lines="">
+    </source-code>
+</split-view>
+
+---
+
+<img id="google-cloud-full" src="/images/google/cloud-full.png" />
+<img id="snapshot" src="/images/snapshots/jib.png"/>
+
+<div id="related">
+    <h1>Jib<br/>(Java Image Builder)</h1>
+    <h2><strong>Maven</strong> and <strong>Gradle</strong> plugin,</h2>
+    <h2>Builds Docker images <strong>without</strong> Docker,</h2>
+    <h2>No <strong>Dockerfile</strong>,</h2>
+    <h2><strong>Incremental</strong> builds.</h2>
+</div>
+
+<img id="qr" src="/qrcode?url=https://github.com/GoogleContainerTools/jib" />
+<a id="url" target="_blank" href="https://github.com/GoogleContainerTools/jib">github.com/GoogleContainerTools/jib</a>
+
+---
+
+<h1 class="demo">Faster builds with Jib</h1>
+<img id="google-cloud-full-top" src="/images/google/cloud-full.png" />
+
+<split-view>
+    <web-term path="{{ .WorkingDir }}/jib"></web-term>
+    <source-code folder="{{ .WorkingDir }}/jib"
+        files="pom.xml src/main/java/hello/Hello.java skaffold.yaml"
+        start-lines="39"
+        end-lines="43">
+    </source-code>
+</split-view>
+
+---
+
+<h1 class="demo">Jib and Gradle</h1>
+<img id="google-cloud-full-top" src="/images/google/cloud-full.png" />
+
+<split-view>
+    <web-term path="{{ .WorkingDir }}/gradle"></web-term>
+    <source-code folder="{{ .WorkingDir }}/gradle"
+        files="build.gradle src/main/java/hello/Hello.java skaffold.yaml"
+        start-lines="3"
+        end-lines="3">
+    </source-code>
+</split-view>
+
+---
+
+<h1 class="demo">Not just for Hello World</h1>
+<img id="google-cloud-full-top" src="/images/google/cloud-full.png" />
+
+<split-view>
+    <source-code folder="{{ .WorkingDir }}/hexagons"
+        files="skaffold.yaml k8s/ui.yaml k8s/game.yaml k8s/ref.yaml k8s/db.yaml"
+        start-lines=""
+        end-lines="">
+    </source-code>
+</split-view>
+
+---
+ 
+<h1 class="demo">Not just for Hello World</h1>
+<img id="google-cloud-full-top" src="/images/google/cloud-full.png" />
+
+<split-view>
+    <web-term path="{{ .WorkingDir }}/hexagons"></web-term>
+    <web-browser src="http://localhost:8080/"></web-browser>
+</split-view>
+
+---
+
+<h1 class="demo">Not just for Hello World</h1>
+<img id="google-cloud-full" src="/images/google/cloud-full.png" />
+
+<img id="center" src="/images/hexagons.svg"/>
+
+<script src="/js/draw.js"></script>
+
+---
+
+<img id="google-cloud-full" src="/images/google/cloud-full.png" />
+<img id="snapshot" src="/images/tight-loop.svg"/>
+
+<div id="related">
+    <h1>That's Skaffold!</h1>
+    <h2>Tight <strong>Feedback</strong> Loop,</h2>
+    <h2>Adapts to your <strong>tooling</strong>,</h2>
+    <h2><strong>Any</strong> Kubernetes,</h2>
+    <h2>Try it on <strong>Monday</strong>!</h2>
+</div>
+
+<img id="qr" src="/qrcode?url=https://skaffold.dev" />
+<a id="url" target="_blank" href="https://skaffold.dev">skaffold.dev</a>
+
+<style>
+    #snapshot {
+        width: 65%;
+        top: 15%;
+        left: -5%;;
+    }
+</style>
+
+---
+
+<img id="google-cloud-full" src="/images/google/cloud-full.png" />
+
+<div id="title-low">
+    <h1>Can it be<br/>even easier?</h1>
+</div>
+
+---
+
+<img id="google-cloud-full" src="/images/google/cloud-full.png" />
+
+<div id="long">
+    <h1>Introducing Cloud Code!</h1>
+    <h2>Building highly scalable <strong>cloud native</strong> applications is hard.
+        Google Cloud Code is a set of <strong>integrated tools</strong> that let you
+        spend less time learning about the tool chain, configuration
+        and management of your app - giving you more time to<br/><strong>focus
+        on writing and evolving your code</strong>.</h2>
+</div>
+
+<img id="cloud-code" src="/images/cloud-code.png" />
+<img id="citation" src="/images/citation.svg" />
+
+<style>
+    #cloud-code {
+        position: absolute;
+        top: 5vw;
+        width: 10vw;
+        left: 8.5vw;
+    }
+
+    #long {
+        top: 10vw;
+    }
+
+    #long h2 {
+        line-height: 3.7vw;
+        width: 110%;
+    }
+</style>
+
+---
+
+<div id="dark">
+    <h1 id="title-main">Demo: Cloud Code</h1>
+</div>
+
+<img id="google-cloud-full" src="/images/google/cloud-full.png" />
+<div id="google-cloud-text">Google_logo Cloud</div>
+
+<style>
+    #title {
+        width: 100%;
+    }
+</style>
+
+---
+
+<img id="google-cloud-full" src="/images/google/cloud-full.png" />
+<img id="cloud-code" src="/images/cloud-code.png" />
+
+<div id="long">
+    <h1>How to get Cloud Code?</h1>
+
+</div>
+
+<div id="left">
+    <h2>Cloud Code for<br/>Visual Studio Code</h2>
+    <ul>
+        <li>Download (VS Code Marketplace)</li>
+        <li>Issues Tracked on Github</li>
+    </ul>
+</div>
+
+<div id="right">
+    <h2>Cloud Code for<br/>IntelliJ</h2>
+    <ul>
+        <li>Download (JetBrains Plugins Repository)</li>
+        <li>Issues Tracked on Github</li>
+    </ul>
+</div>
+
+<img id="qr" src="/qrcode?url=https://cloud.google.com/code" />
+<a id="url" target="_blank" href="https://cloud.google.com/code">cloud.google.com/code</a>
+
+<style>
+    #cloud-code {
+        position: absolute;
+        top: 2vw;
+        right: 2vw;
+        width: 13vw;
+    }
+
+    #left, #right {
+        position: absolute;
+        top: 18vw;
+        width: 50%;
+    }
+    
+    #left {
+        left: 9vw;
+    }
+
+    #right {
+        left: calc(50% + 1vw)
+    }
+    
+    #right {
+        position: absolute;
+    }
+
+    h2, ul {
+        margin-left: 3vw;
+    }
+
+    h2 {
+        font-size: 3vw;
+        line-height: 3.5vw;
+        font-weight: 700 !important;
+    }
+
+    li {
+        font-size: 2vw;
+        line-height: 3vw;
+    }
+</style>
+
+---
+
+<img id="number" src="/images/full/build.svg" />
+<img id="google-cloud-full" src="/images/google/cloud-full.png" />
+
+---
+
+<img id="google-cloud-full" src="/images/google/cloud-full.png" />
+<img id="snapshot" src="/images/tall-hamburger.png" />
+
+<div id="related">
+    <h1>Building images is hard!</h1>
+    <h2>Images are <strong>too big</strong>,</h2>
+    <h2>Which <strong>base image</strong>?</h2>
+</div>
+
+<style>
+    #snapshot {
+        height: 80%;
+        width: auto;
+        top: 5%;
+        left: 15%;
+    }
+</style>
+
+---
+
+<h1 class="demo">Multi-Stage builds -> smaller images</h1>
+<img id="google-cloud-full-top" src="/images/google/cloud-full.png" />
+
+<split-view>
+    <div id="image"></div>
+    <source-code folder="{{ .WorkingDir }}/multi-stage"
+        files="Dockerfile"
+        start-lines="1,5"
+        end-lines="1,5">
+    </source-code>
+</split-view>
+
+<script src="/js/draw.js"></script>
+
+<style>
+    #image {
+        flex: 1;
+        background-image: url('/images/multi-stage.svg');
+        background-size: 130%;
+        background-position: center;
+        background-repeat: no-repeat;
+    }
+</style>
+
+---
+
+<img id="google-cloud-full" src="/images/google/cloud-full.png" />
+<img id="snapshot" src="/images/snapshots/distroless.png"/>
+
+<div id="related">
+    <h1>Distroless</h1>
+    <h2><strong>Minimal</strong> base images,</h2>
+    <h2>More <strong>secure</strong>,</h2>
+    <h2>Your <strong>app</strong> and its runtime <strong>dependencies</strong>,</h2>
+    <h2>No <strong>shell</strong>, no <strong>package manager</strong>.</h2>
+</div>
+
+<img id="qr" src="/qrcode?url=https://github.com/GoogleContainerTools/distroless" />
+<a id="url" target="_blank" href="https://github.com/GoogleContainerTools/distroless">github.com/GoogleContainerTools/distroless</a>
+
+---
+
+<img id="google-cloud-full-top" src="/images/google/cloud-full.png" />
+
+<web-term id="left" path="{{ .WorkingDir }}/multi-stage"></web-term>
+
+<div id="related">
+    <h1>Go<br/>gcr.io/distroless/base</h1>
+    <h2>glibc</h2>
+    <h2>libssl, openssl, ca-certificates</h2>
+    <h2>root user in /etc/passwd</h2>
+    <h2>/tmp directory</h2>
+</div>
+
+<style>
+    #left {
+        position: absolute;
+        width: 50%;
+        height: calc(100% - 4vw);
+        top: 2vw;
+        left: 2vw;
+    }
+</style>
+
+---
+
+<img id="google-cloud-full-top" src="/images/google/cloud-full.png" />
+
+<web-term id="left" path="{{ .WorkingDir }}/multi-stage-java"></web-term>
+
+<div id="related">
+    <h1>Java<br/>gcr.io/distroless/java:11</h1>
+    <h2>base + jvm</h2>
+</div>
+
+<style>
+    #left {
+        position: absolute;
+        width: 50%;
+        height: calc(100% - 4vw);
+        top: 2vw;
+        left: 2vw;
+    }
+</style>
+
+---
+
+<img id="google-cloud-full" src="/images/google/cloud-full.png" />
+<img id="snapshot" src="/images/snapshots/distroless.png"/>
+
+<div id="related">
+    <h1>That's Distroless!</h1>
+    <h2><strong>Curated</strong> set of<strong> secure</strong> base images,</h2>
+    <h2><strong>:debug</strong> flavor,</h2>
+    <h2>Easy to adopt with <strong>multi-stage</strong> build.</h2>
+</div>
+
+<img id="qr" src="/qrcode?url=https://github.com/GoogleContainerTools/distroless" />
+<a id="url" target="_blank" href="https://github.com/GoogleContainerTools/distroless">github.com/GoogleContainerTools/distroless</a>
+
+---
+
+<img id="google-cloud-full" src="/images/google/cloud-full.png" />
+
+<div id="related">
+    <h1>Building on a cluster<br/>is tricky</h1>
+    <h2>Hard to <strong>setup</strong>,</h2>
+    <h2>Bind the <strong>Docker socket?</strong></h2>
+    <h2>Docker in Docker?</h2>
+    <h2>What if the <strong>runtime</strong> is not Docker?</h2>
+</div>
+
+---
+
+<img id="google-cloud-full" src="/images/google/cloud-full.png" />
+<img id="snapshot" src="/images/snapshots/kaniko.png"/>
+
+<div id="related">
+    <h1>Kaniko</h1>
+    <h2>Runs in a Kubernetes <strong>pod</strong>,</h2>
+    <h2><strong>Sources</strong> + <strong>Dockerfile</strong> -> <strong>OCI Image</strong>,</h2>
+    <h2><strong>Pushes</strong> to a registry.</h2>
+</div>
+
+<img id="qr" src="/qrcode?url=https://github.com/GoogleContainerTools/kaniko" />
+<a id="url" target="_blank" href="https://github.com/GoogleContainerTools/kaniko">github.com/GoogleContainerTools/kaniko</a>
+
+---
+
+<h1 class="demo">Kaniko and Skaffold</h1>
+<img id="google-cloud-full-top" src="/images/google/cloud-full.png" />
+
+<split-view>
+    <web-term path="{{ .WorkingDir }}/kaniko"></web-term>
+    <source-code folder="{{ .WorkingDir }}/kaniko"
+        files="skaffold.yaml Dockerfile"
+        start-lines=";"
+        end-lines=";">
+    </source-code>
+</split-view>
+
+---
+
+<img id="google-cloud-full" src="/images/google/cloud-full.png" />
+<img id="snapshot" src="/images/snapshots/kaniko.png"/>
+
+<div id="related">
+    <h1>That's Kaniko!</h1>
+    <h2>Works on any <strong>Kubernetes Cluster</strong>,</h2>
+    <h2>And <strong>Google Cloud Build</strong>.</h2>
+</div>
+
+<img id="qr" src="/qrcode?url=https://github.com/GoogleContainerTools/kaniko" />
+<a id="url" target="_blank" href="https://github.com/GoogleContainerTools/kaniko">github.com/GoogleContainerTools/kaniko</a>
+
+---
+
+<img id="number" src="/images/full/deploy.svg" />
+<img id="google-cloud-full" src="/images/google/cloud-full.png" />
+
+---
+
+<img id="google-cloud-full" src="/images/google/cloud-full.png" />
+<img id="snapshot" src="/images/template.svg"/>
+
+<div id="related">
+    <h1>Configuration Hell</h1>
+    <h2>How do you target multiple <strong>environments</strong>?</h2>
+    <h2>How much do you like Yaml <strong>templates</strong>?</h2>
+    <h2>Do you know there are <strong>over 60</strong> configuration tools for k8s?</h2>
+</div>
+
+<style>
+    #snapshot {
+        top: 3vw;
+    }
+</style>
+
+---
+
+<img id="google-cloud-full" src="/images/google/cloud-full.png" />
+<img id="snapshot" src="/images/snapshots/kustomize.png"/>
+
+<div id="related">
+    <h1>kustomize</h1>
+    <h2><strong>Template-free</strong>,</h2>
+    <h2><strong>No new language</strong> to learn,</h2>
+    <h2>K8s aware <strong>patches</strong> and <strong>overlays</strong>,</h2>
+    <h2>Deals with <strong>secrets</strong> and <strong>config maps</strong>,</h2>
+    <h2>Very <strong>composable</strong>.</h2>
+</div>
+
+<img id="qr" src="/qrcode?url=https://github.com/kubernetes-sigs/kustomize" />
+<a id="url" target="_blank" href="https://github.com/kubernetes-sigs/kustomize">github.com/kubernetes-sigs/kustomize</a>
+
+---
+
+<h1 class="demo">kustomize - Overlays</h1>
+<img id="google-cloud-full-top" src="/images/google/cloud-full.png" />
+
+<div id="images">
+    <img class="code" src="/images/kustomize/dev.png"/>
+    <img class="symbol hidden" src="/images/plus.png"/>
+    <img class="code hidden" src="/images/kustomize/patch.png"/>
+    <img class="symbol hidden" src="/images/arrow.png"/>
+    <img class="code hidden" src="/images/kustomize/prod.png"/>
+</div>
+
+<style>
+    #images {
+        position: absolute;
+        top: 11vw;
+        left: 5vw;
+        width: calc(100% - 10vw);
+        display: grid;
+        grid-template-columns: auto 3vw auto 3vw auto;
+    }
+    img.code {
+        width: 100%;
+        height: auto;
+        border-radius: 8px;
+        box-shadow: 0 4px 4px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
+        justify-self: center;
+        align-self: center;
+    }
+    .symbol{
+        width: 2vw;
+        justify-self: center;
+        align-self: center;
+    }
+    .hidden {
+        visibility: hidden;
+    }
+</style>
+
+---
+
+<h1 class="demo">kustomize - Overlays</h1>
+<img id="google-cloud-full-top" src="/images/google/cloud-full.png" />
+
+<div id="images">
+    <img class="code" src="/images/kustomize/dev.png"/>
+    <img class="symbol" src="/images/plus.png"/>
+    <img class="code" src="/images/kustomize/patch.png"/>
+    <img class="symbol hidden" src="/images/arrow.png"/>
+    <img class="code hidden" src="/images/kustomize/prod.png"/>
+</div>
+
+<style>
+    #images {
+        position: absolute;
+        top: 11vw;
+        left: 5vw;
+        width: calc(100% - 10vw);
+        display: grid;
+        grid-template-columns: auto 3vw auto 3vw auto;
+    }
+    img.code {
+        width: 100%;
+        height: auto;
+        border-radius: 8px;
+        box-shadow: 0 4px 4px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
+        justify-self: center;
+        align-self: center;
+    }
+    .symbol{
+        width: 2vw;
+        justify-self: center;
+        align-self: center;
+    }
+    .hidden {
+        visibility: hidden;
+    }
+</style>
+
+---
+
+<h1 class="demo">kustomize - Overlays</h1>
+<img id="google-cloud-full-top" src="/images/google/cloud-full.png" />
+
+<div id="images">
+    <img class="code" src="/images/kustomize/dev.png"/>
+    <img class="symbol" src="/images/plus.png"/>
+    <img class="code" src="/images/kustomize/patch-2.png"/>
+    <img class="symbol hidden" src="/images/arrow.png"/>
+    <img class="code hidden" src="/images/kustomize/prod.png"/>
+</div>
+
+<style>
+    #images {
+        position: absolute;
+        top: 11vw;
+        left: 5vw;
+        width: calc(100% - 10vw);
+        display: grid;
+        grid-template-columns: auto 3vw auto 3vw auto;
+    }
+    img.code {
+        width: 100%;
+        height: auto;
+        border-radius: 8px;
+        box-shadow: 0 4px 4px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
+        justify-self: center;
+        align-self: center;
+    }
+    .symbol{
+        width: 2vw;
+        justify-self: center;
+        align-self: center;
+    }
+    .hidden {
+        visibility: hidden;
+    }
+</style>
+
+---
+
+<h1 class="demo">kustomize - Overlays</h1>
+<img id="google-cloud-full-top" src="/images/google/cloud-full.png" />
+
+<div id="images">
+    <img class="code" src="/images/kustomize/dev.png"/>
+    <img class="symbol" src="/images/plus.png"/>
+    <img class="code" src="/images/kustomize/patch-2.png"/>
+    <img class="symbol" src="/images/arrow.png"/>
+    <img class="code" src="/images/kustomize/prod.png"/>
+</div>
+
+<style>
+    #images {
+        position: absolute;
+        top: 11vw;
+        left: 5vw;
+        width: calc(100% - 10vw);
+        display: grid;
+        grid-template-columns: auto 3vw auto 3vw auto;
+    }
+    img.code {
+        width: 100%;
+        height: auto;
+        border-radius: 8px;
+        box-shadow: 0 4px 4px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
+        justify-self: center;
+        align-self: center;
+    }
+    .symbol{
+        width: 2vw;
+        justify-self: center;
+        align-self: center;
+    }
+    .hidden {
+        visibility: hidden;
+    }
+</style>
+
+---
+
+<h1 class="demo">Produce a YAML for production</h1>
+<img id="google-cloud-full-top" src="/images/google/cloud-full.png" />
+
+<split-view>
+    <web-term path="{{ .WorkingDir }}/kustomize"></web-term>
+    <source-code folder="{{ .WorkingDir }}/kustomize"
+        files="base/hello.yaml base/kustomization.yaml overlays/prod/kustomization.yaml overlays/prod/greeting.yaml overlays/prod/pull-policy.yaml"
+        start-lines="22;10;12"
+        end-lines="22;10;12">
+    </source-code>
+</split-view>
+
+---
+
+<h1 class="demo">Production with kustomize and Skaffold</h1>
+<img id="google-cloud-full-top" src="/images/google/cloud-full.png" />
+
+<split-view>
+    <web-term path="{{ .WorkingDir }}/kustomize"></web-term>
+    <source-code folder="{{ .WorkingDir }}/kustomize"
+        files="skaffold.yaml"
+        start-lines="12"
+        end-lines="17">
+    </source-code>
+</split-view>
+
+---
+
+<img id="google-cloud-full" src="/images/google/cloud-full.png" />
+<img id="snapshot" src="/images/snapshots/kustomize.png"/>
+
+<div id="related">
+    <h1>That's kustomize!</h1>
+    <h2>Handles different <strong>environments</strong>,</h2>
+    <h2><strong>GitOps</strong> friendly,</h2>
+    <h2>Built-in kubectl <strong>1.14</strong>,</h2>
+    <h2>Interfaces nicely with <strong>Skaffold</strong>.</h2>
+</div>
+
+<img id="qr" src="/qrcode?url=https://github.com/kubernetes-sigs/kustomize" />
+<a id="url" target="_blank" href="https://github.com/kubernetes-sigs/kustomize">github.com/kubernetes-sigs/kustomize</a>
+
+---
+
+<img id="google-cloud-full" src="/images/google/cloud-full.png" />
+
+<div id="title-low">
+    <h1>Let's Recap!</h1>
+</div>
+
+---
+
+<h1 class="demo">Google Container Tools</h1>
+<img id="google-cloud-full" src="/images/google/cloud-full.png" />
+
+<div id="recap">
+    <div>
+        <h1 style="color: var(--color-green);">Kustomize</h1>
+        <h2>Handles customization<br/>for different environments</h2>
+    </div>
+    <div>
+        <h1 style="color: var(--color-red);">Kaniko</h1>
+        <h2>Builds images<br/>on Kubernetes</h2>
+    </div>
+    <div>
+        <h1 style="color: var(--color-yellow);">Jib</h1>
+        <h2>Builds Java applications<br/>quickly and effortlessly</h2>
+    </div>
+    <div>
+        <h1 style="color: var(--color-blue);">Distroless</h1>
+        <h2>Gives you more<br/>secure images</h2>
+    </div>
+    <div>
+        <h1 style="color: var(--color-yellow);">Cloud Code</h1>
+        <h2>Lets you focus<br/>on your code</h2>
+    </div>
+    <div>
+        <h1 style="color: var(--color-green);">Skaffold</h1>
+        <h2>Gives you a<br/>tight feedback loop</h2>
+    </div>
+</div>
+
+<style>
+    #recap {
+        display: grid;
+        grid-template-columns: auto auto auto;
+        row-gap: 2vw;
+    }
+
+    #recap h2 {
+        font-size: 2.3vw;
+        line-height: 2.5vw;
+    }
+
+    #recap h1 {
+        color: var(--color-blue);
+    }
+</style>
+
+---
+
+<img id="google-cloud-full" src="/images/google/cloud-full.png" />
+
+<div id="title-low">
+    <h1>Thank you!</h1>
+    <h3 class="space">David Gageot</h3>
+    <h3><a href="dgageot@google.com">dgageot@google.com</a></h3>
+</div>
+
+<div id="related">
+    <h1>Q&As</h1>
+</div>
